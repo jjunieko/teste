@@ -1,0 +1,27 @@
+version: '3'
+services:
+  nodejs:
+  #image apenas para teste
+    image: joaojunior/app-node-dockerizado:latest
+    build: .
+    ports:
+      - 3090
+    depends_on:
+      - db
+  db:
+    image: postgres
+    restart: always
+    enviroment: 
+    POSTGRESS_PASSWORD: mypassword
+    volumes:
+      - ./dados_postgres:/var/lib/postgresql/data
+    ports:
+      - 5432
+  minha_app:
+  #image apenas para teste
+    image: jacksonpires/app-node-dockerizado:latest
+    build: .
+    ports:
+      - 3090
+    depends_on:
+      - db
