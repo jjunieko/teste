@@ -4,6 +4,7 @@
 .bash_history
 .bash_profile
 .DS_Store
+.node_modules/
 exemplo-docker-compose/dados_postgres/
 exemplo-docker-compose/crud-node-postgres/
 nginx-nodejs-postgres/dados_postgres/
